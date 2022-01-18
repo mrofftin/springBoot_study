@@ -21,5 +21,5 @@ public interface AcademyMapper {
 
     @ResultMap("academyMap")
     @Select("select * from academy where id=#{id}")
-    Academy getById(int id);
+    Academy getById(@Param("id") int id);
 }
