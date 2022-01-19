@@ -29,6 +29,12 @@ public interface StudentMapper {
     @ResultMap("studentMap")
     @Select("select * from student where id=#{id}")
     Student getById(@Param("id") int id);
+
+    // student목록을 얻어오는 API
+    @Select("select * from student where academy_id=#{academyId}")
+    @ResultMap("studentMap")
+    List<Student> getByAcademyId(@Param("academyId") int academyId);
+
 }
 
 
